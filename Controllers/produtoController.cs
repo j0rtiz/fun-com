@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using fun_com.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace fun_com.Controllers
 {
@@ -29,19 +31,23 @@ namespace fun_com.Controllers
     }
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public IActionResult Create([Bind("Nome, Tipo, Local, Valor")] Produto Produtos)
     {
       try
       {
-        _context.Add(Produtos);
-        _context.SaveChanges();
-        return RedirectToAction("Index");
+        if (ModelState.IsValid)
+        {
+          _context.Add(Produtos);
+          _context.SaveChanges();
+          return RedirectToAction("Index");
+        }
       }
-      catch
+      catch (Exception e)
       {
-        Debug.WriteLine("catch @Controller Create");
-        return View();
+        ModelState.AddModelError("", e.Message);
       }
+      return View(Produtos);
     }
   }
 }
