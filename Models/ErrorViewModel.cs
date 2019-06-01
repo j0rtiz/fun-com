@@ -1,6 +1,6 @@
 using System;
 
-namespace _4fun_com.Models
+namespace fun_com.Models
 {
     public class ErrorViewModel
     {

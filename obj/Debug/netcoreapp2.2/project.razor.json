@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Dev\\4fun-com\\4fun-com.csproj",
+  "FilePath": "c:\\Dev\\fun-com\\fun-com.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2756,7 +2756,7 @@
     ],
     "CSharpLanguageVersion": 703
   },
-  "RootNamespace": "_4fun_com",
+  "RootNamespace": "fun_com",
   "Documents": [
     {
       "FilePath": "Views\\Shared\\Error.cshtml",
@@ -2764,13 +2764,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "Views\\produto\\listar.cshtml",
+      "TargetPath": "Views\\produto\\listar.cshtml",
       "FileKind": "mvc"
     },
     {
