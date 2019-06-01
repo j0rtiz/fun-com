@@ -2,9 +2,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace fun_com.Models
 {
-  public class dbContext : DbContext
+  public class Context : DbContext
   {
-    public dbContext(DbContextOptions<dbContext> options) : base(options) { }
+    public Context(DbContextOptions<Context> options) : base(options) { }
     public DbSet<Produto> Produtos { get; set; }
   }
 }

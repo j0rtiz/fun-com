@@ -26,5 +26,5 @@ C:\dev\fun-com\obj\Debug\netcoreapp2.2\fun-com.Views.pdb
 C:\dev\fun-com\obj\Debug\netcoreapp2.2\fun-com.dll
 C:\dev\fun-com\obj\Debug\netcoreapp2.2\fun-com.pdb
 C:\dev\fun-com\obj\Debug\netcoreapp2.2\fun-com.csproj.CopyComplete
-C:\Dev\fun-com\obj\Debug\netcoreapp2.2\Razor\Views\produto\listar.g.cshtml.cs
-C:\Dev\fun-com\obj\Debug\netcoreapp2.2\Razor\Views\produto\create.g.cshtml.cs
+C:\Dev\fun-com\obj\Debug\netcoreapp2.2\Razor\Views\Produto\Index.g.cshtml.cs
+C:\Dev\fun-com\obj\Debug\netcoreapp2.2\Razor\Views\Produto\Create.g.cshtml.cs

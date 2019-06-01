@@ -35,7 +35,7 @@ namespace fun_com
         options.MinimumSameSitePolicy = SameSiteMode.None;
       });
 
-      services.AddDbContextPool<dbContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+      services.AddDbContextPool<Context>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
     }
@@ -62,7 +62,7 @@ namespace fun_com
       {
         routes.MapRoute(
                   name: "default",
-                  template: "{controller=produto}/{action=listar}/{id?}");
+                  template: "{controller=Produto}/{action=Index}/{id?}");
       });
     }
   }

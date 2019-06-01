@@ -11,35 +11,35 @@ namespace fun_com.Controllers
 {
   public class ProdutoController : Controller
   {
-    private readonly dbContext _context;
+    private readonly Context _context;
 
-    public ProdutoController(dbContext context)
+    public ProdutoController(Context context)
     {
       _context = context;
     }
 
-    public IActionResult listar()
+    public IActionResult Index()
     {
       return View(_context.Produtos);
     }
 
-    public IActionResult create()
+    public IActionResult Create()
     {
       return View();
     }
 
     [HttpPost]
-    public IActionResult create([Bind("Nome, Tipo, Local, Valor")] Produto produtos)
+    public IActionResult Create([Bind("Nome, Tipo, Local, Valor")] Produto Produtos)
     {
       try
       {
-        _context.Add(produtos);
+        _context.Add(Produtos);
         _context.SaveChanges();
-        return RedirectToAction("listar");
+        return RedirectToAction("Index");
       }
       catch
       {
-        Debug.WriteLine("catch @Controller create");
+        Debug.WriteLine("catch @Controller Create");
         return View();
       }
     }

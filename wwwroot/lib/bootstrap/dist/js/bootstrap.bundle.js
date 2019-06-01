@@ -62,7 +62,7 @@
   }
 
   function _inheritsLoose(subClass, superClass) {
-    subClass.prototype = Object.create(superClass.prototype);
+    subClass.prototype = Object.Create(superClass.prototype);
     subClass.prototype.constructor = subClass;
     subClass.__proto__ = superClass;
   }
@@ -1411,7 +1411,7 @@
   }($);
 
   /**!
-   * @fileOverview Kickass library to create and place poppers near their reference elements.
+   * @fileOverview Kickass library to Create and place poppers near their reference elements.
    * @version 1.14.3
    * @license
    * Copyright (c) 2016 Federico Zivolo and contributors
@@ -3797,7 +3797,7 @@
       // make update() debounced, so that it only runs at most once-per-tick
       this.update = debounce(this.update.bind(this));
 
-      // with {} we create a new object with the options inside it
+      // with {} we Create a new object with the options inside it
       this.options = _extends({}, Popper.Defaults, options);
 
       // init state
