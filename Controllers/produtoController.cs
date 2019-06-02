@@ -20,6 +20,7 @@ namespace fun_com.Controllers
       _context = context;
     }
 
+    [HttpGet]
     public IActionResult Index()
     {
       return View(_context.Produtos);
@@ -31,7 +32,6 @@ namespace fun_com.Controllers
     }
 
     [HttpPost]
-    [ValidateAntiForgeryToken]
     public IActionResult Create([Bind("Nome, Tipo, Local, Valor")] Produto Produtos)
     {
       try
@@ -47,7 +47,48 @@ namespace fun_com.Controllers
       {
         ModelState.AddModelError("", e.Message);
       }
-      return View(Produtos);
+      return View();
+    }
+
+    [HttpGet]
+    public IActionResult Delete(int? Id)
+    {
+      if (Id == null)
+      {
+        return NotFound();
+      }
+
+      var produto = _context.Produtos.AsNoTracking().FirstOrDefault(p => p.Id == Id);
+
+      if (produto == null)
+      {
+        return NotFound();
+      }
+
+      return View(produto);
+    }
+
+    [HttpPost]
+    public IActionResult Delete(int Id)
+    {
+      var produto = _context.Produtos.Find(Id);
+
+      if (produto == null)
+      {
+        return RedirectToAction("Index");
+      }
+
+      try
+      {
+        _context.Produtos.Remove(produto);
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+      }
+      catch (Exception e)
+      {
+        ModelState.AddModelError("", e.Message);
+      }
+      return View();
     }
   }
 }

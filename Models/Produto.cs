@@ -20,7 +20,7 @@ namespace fun_com.Models
     public string Local { get; set; }
 
     [Required]
-    [Range(1, 100), DataType(DataType.Currency)]
+    [DataType(DataType.Currency)]
     [Column(TypeName = "decimal(11, 2)")]
     public decimal Valor { get; set; }
   }

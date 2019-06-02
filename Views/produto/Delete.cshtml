@@ -1,0 +1,35 @@
+@model fun_com.Models.Produto
+
+<div class="mx-auto" style="width: 40%;">
+    <h3>Excluir Produto</h3>
+    <h5 class="pt-2">Tem certeza que deseja excluir este produto?</h5>
+    <dl class="dl-horizontal pt-4">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-row pt-3">
+            <div class="col-md-6">
+                <a style="text-decoration: none;" asp-area="" asp-controller="Produto" asp-action="Index">
+                    <input type="button" value="Cancelar" class="btn btn-dark btn-block"/>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <input type="submit" value="Excluir" class="btn btn-danger btn-block" />
+            </div>
+        </div>
+    }
+</div>

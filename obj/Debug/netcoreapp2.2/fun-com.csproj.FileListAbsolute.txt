@@ -28,3 +28,4 @@ C:\dev\fun-com\obj\Debug\netcoreapp2.2\fun-com.pdb
 C:\dev\fun-com\obj\Debug\netcoreapp2.2\fun-com.csproj.CopyComplete
 C:\Dev\fun-com\obj\Debug\netcoreapp2.2\Razor\Views\Produto\Index.g.cshtml.cs
 C:\Dev\fun-com\obj\Debug\netcoreapp2.2\Razor\Views\Produto\Create.g.cshtml.cs
+C:\Dev\fun-com\obj\Debug\netcoreapp2.2\Razor\Views\Produto\Delete.g.cshtml.cs
