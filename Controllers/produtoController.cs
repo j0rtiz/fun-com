@@ -90,5 +90,47 @@ namespace fun_com.Controllers
       }
       return View();
     }
+
+    [HttpGet]
+    public IActionResult Update(int? Id)
+    {
+      if (Id == null)
+      {
+        return NotFound();
+      }
+
+      var produto = _context.Produtos.Find(Id);
+
+      if (produto == null)
+      {
+        return NotFound();
+      }
+
+      return View(produto);
+    }
+
+    [HttpPost]
+    public IActionResult Update(int Id, [Bind("Id, Nome, Tipo, Local, Valor")] Produto produto)
+    {
+      if (Id != produto.Id)
+      {
+        return NotFound();
+      }
+
+      if (ModelState.IsValid)
+      {
+        try
+        {
+          _context.Update(produto);
+          _context.SaveChanges();
+          return RedirectToAction("Index");
+        }
+        catch (Exception e)
+        {
+          ModelState.AddModelError("", e.Message);
+        }
+      }
+      return View();
+    }
   }
 }

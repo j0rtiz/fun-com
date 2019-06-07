@@ -2802,6 +2802,11 @@
       "FilePath": "Views\\Produto\\Delete.cshtml",
       "TargetPath": "Views\\Produto\\Delete.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Produto\\Update.cshtml",
+      "TargetPath": "Views\\Produto\\Update.cshtml",
+      "FileKind": "mvc"
     }
   ]
 }
