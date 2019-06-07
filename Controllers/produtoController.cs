@@ -32,13 +32,13 @@ namespace fun_com.Controllers
     }
 
     [HttpPost]
-    public IActionResult Create([Bind("Nome, Tipo, Local, Valor")] Produto Produtos)
+    public IActionResult Create([Bind("Nome, Tipo, Local, Valor")] Produto produto)
     {
       try
       {
         if (ModelState.IsValid)
         {
-          _context.Add(Produtos);
+          _context.Add(produto);
           _context.SaveChanges();
           return RedirectToAction("Index");
         }
