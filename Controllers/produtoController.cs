@@ -1,13 +1,11 @@
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using fun_com.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Net;
 
 namespace fun_com.Controllers
 {
@@ -23,7 +21,37 @@ namespace fun_com.Controllers
     [HttpGet]
     public IActionResult Index()
     {
-      return View(_context.Produtos);
+      var apiProdutos = new List<Produto>();
+      var api = new WebClient();
+      var url = "http://localhost:3000/api/Produtos";
+
+      try
+      {
+        var res = api.DownloadString(url);
+        JsonConvert.PopulateObject(res, apiProdutos);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+
+      var produtos = _context.Produtos;
+
+      foreach (var produto in produtos)
+      {
+        foreach (var apiProduto in apiProdutos)
+        {
+          if (produto.Nome == apiProduto.Nome)
+          {
+            if (apiProduto.Valor < produto.Valor)
+            {
+              produto.Valor = (90 * apiProduto.Valor) / 100;
+            }
+          }
+        }
+      }
+
+      return View(produtos);
     }
 
     public IActionResult Create()
