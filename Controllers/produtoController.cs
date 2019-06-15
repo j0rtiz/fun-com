@@ -46,6 +46,7 @@ namespace fun_com.Controllers
             if (apiProduto.Valor < produto.Valor)
             {
               produto.Valor = (90 * apiProduto.Valor) / 100;
+              produto.Promo = true;
             }
           }
         }

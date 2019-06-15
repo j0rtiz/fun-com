@@ -45,9 +45,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Local)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Valor)
-            </td>
+            @if (item.Promo == true)
+            {
+                <td style="color: red;">
+                    @Html.DisplayFor(modelItem => item.Valor) | #Promo
+                </td>
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+            }
             <td>
                 @Html.ActionLink("Excluir", "delete", new { Id = item.Id }) |
                 @Html.ActionLink("Editar", "update", new { Id = item.Id })

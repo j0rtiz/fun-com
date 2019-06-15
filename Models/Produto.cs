@@ -23,5 +23,7 @@ namespace fun_com.Models
     [DataType(DataType.Currency)]
     [Column(TypeName = "decimal(11, 2)")]
     public decimal Valor { get; set; }
+
+    public bool Promo = false;
   }
 }
