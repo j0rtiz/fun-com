@@ -23,7 +23,7 @@ namespace fun_com.Controllers
     {
       var apiProdutos = new List<Produto>();
       var api = new WebClient();
-      var url = "http://localhost:3000/api/Produtos";
+      var url = "https://api-produto-aspnet.herokuapp.com/api/Produtos";
 
       try
       {
