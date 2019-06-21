@@ -2948,8 +2948,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Produto\\Create.cshtml",
-      "TargetPath": "Views\\Produto\\Create.cshtml",
+      "FilePath": "Views\\produto\\create.cshtml",
+      "TargetPath": "Views\\produto\\create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -2973,8 +2973,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Produto\\Index.cshtml",
-      "TargetPath": "Views\\Produto\\Index.cshtml",
+      "FilePath": "Views\\produto\\Index.cshtml",
+      "TargetPath": "Views\\produto\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -2983,13 +2983,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Produto\\Delete.cshtml",
-      "TargetPath": "Views\\Produto\\Delete.cshtml",
+      "FilePath": "Views\\produto\\Delete.cshtml",
+      "TargetPath": "Views\\produto\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Produto\\Update.cshtml",
-      "TargetPath": "Views\\Produto\\Update.cshtml",
+      "FilePath": "Views\\produto\\Update.cshtml",
+      "TargetPath": "Views\\produto\\Update.cshtml",
       "FileKind": "mvc"
     }
   ]
